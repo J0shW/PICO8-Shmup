@@ -28,7 +28,7 @@ function _init()
 end
 
 function _draw()
- cls(15)
+ cls(14)
  drawPlayer()
  
  -- this crazy value '&0b1111'
