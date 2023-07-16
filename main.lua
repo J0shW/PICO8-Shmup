@@ -24,7 +24,7 @@ shots={}
 shotwait=0
  
 function _init()
- px,py=64,64
+ px,py=56,56
  spd=1.4
  lastdir=0
 
@@ -40,10 +40,10 @@ function _draw()
 
  -- this crazy value '&0b1111'
  local btnv=btn()&0b1111
- print(btn(),5,4,7)
- print(btnv,5,10,7)
- print(butarr[btnv],5,16,7)
- print(shipspr,5,23,7)
+--  print(btn(),5,4,7)
+--  print(btnv,5,10,7)
+--  print(butarr[btnv],5,16,7)
+--  print(shipspr,5,23,7)
 end
 
 function _update60()
