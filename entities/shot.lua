@@ -15,6 +15,8 @@ function updateShots()
    shot_raiden()
   elseif wep==2 then
    shot_ddp()
+		elseif wep==3 then
+   shot_water()
   end
  end
 
@@ -22,7 +24,7 @@ function updateShots()
 	for s in all(shots) do
   s.x+=s.sx
   s.y+=s.sy
-		s.si+=0.5
+		s.si+=s.sstep
 		if	flr(s.si)>#s.sani then
 			s.si=1
 		end
@@ -49,6 +51,7 @@ end
 -- 	sy=shotspd, -- vertical speed
 -- 	sani={11}, -- the sprite animation frames can be 1 or more
 -- 	si=1, -- sprite animation index
+-- 	sstep=0.5, -- sprite animation speed
 -- 	sh=1 -- sprite height
 -- })
 function shot_raiden()
@@ -62,6 +65,7 @@ function shot_raiden()
 				sy=shotspd,
 				sani={11},
 				si=1,
+				sstep=0.5,
 				sh=1
 		})
 		add(shots,{
@@ -71,6 +75,7 @@ function shot_raiden()
 				sy=shotspd,
 				sani={11},
 				si=1,
+				sstep=0.5,
 				sh=1
 		})
 
@@ -109,6 +114,7 @@ function shot_ddp()
 				sy=shotspd,
 				sani={32,33,34},
 				si=(t\2)%3+1,
+				sstep=0.5,
 				sh=2
 		})
 		add(shots,{
@@ -118,6 +124,7 @@ function shot_ddp()
 				sy=shotspd,
 				sani={32,33,34},
 				si=(t\2)%3+1,
+				sstep=0.5,
 				sh=2
 		})
 
@@ -135,5 +142,47 @@ function shot_ddp()
 			si=1,
 		})
 		sfx(0)
+	end
+end
+
+function shot_water()
+	if shotwait <=0 and #shots<100 then
+		local shotspd=-4
+		shotwait=2
+		add(shots,{
+				x=px,
+				y=py,
+				sx=0,
+				sy=shotspd,
+				sani={27,28,29},
+				si=(t\2)%3+1,
+				sstep=0.5,
+				sh=1
+		})
+		add(shots,{
+				x=px+8,
+				y=py,
+				sx=0,
+				sy=shotspd,
+				sani={27,28,29},
+				si=(t\2)%3+1,
+				sstep=0.5,
+				sh=1
+		})
+
+		add(muzz,{
+			x=-4,
+			y=-8,
+   sani={35, 37,	39, 41},
+			si=1,
+	 })
+
+		add(muzz,{
+			x=4,
+			y=-8,
+			sani={35, 37,	39, 41},
+			si=1,
+		})
+		sfx(1)
 	end
 end

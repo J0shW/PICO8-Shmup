@@ -36,7 +36,8 @@ function _init()
 end
 
 function _draw()
- cls(12)
+ cls(15)
+ map(0,0,0,0,16,16)
  drawPlayer()
 
  -- this crazy value '&0b1111'

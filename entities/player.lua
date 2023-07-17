@@ -15,7 +15,7 @@ end
 
 function updatePlayer()
  if btnp(🅾️) then
-  wep=wep>1 and 1 or 2
+  wep=wep==3 and 1 or wep+1
  end
  local dir=butarr[btn()&0b1111]
  
