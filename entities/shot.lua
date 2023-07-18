@@ -80,24 +80,17 @@ function shot_raiden()
 		})
 
 		add(muzz,{
-			x=0,
-			y=0,
-   sani={35, 37,	39, 41},
-			si=1,
-	 })
-
-		add(muzz,{
 			x=-4,
 			y=-8,
    sani={35, 37,	39, 41},
-			si=1,
+			si=0,
 	 })
 
 		add(muzz,{
 			x=4,
 			y=-8,
 			sani={35, 37,	39, 41},
-			si=1,
+			si=0,
 		})
 		sfx(0)
 	end
@@ -132,14 +125,14 @@ function shot_ddp()
 			x=-4,
 			y=-8,
    sani={35, 37,	39, 41},
-			si=1,
+			si=0,
 	 })
 
 		add(muzz,{
 			x=4,
 			y=-8,
 			sani={35, 37,	39, 41},
-			si=1,
+			si=0,
 		})
 		sfx(0)
 	end
@@ -174,14 +167,14 @@ function shot_water()
 			x=-4,
 			y=-8,
    sani={35, 37,	39, 41},
-			si=1,
+			si=0,
 	 })
 
 		add(muzz,{
 			x=4,
 			y=-8,
 			sani={35, 37,	39, 41},
-			si=1,
+			si=0,
 		})
 		sfx(1)
 	end
